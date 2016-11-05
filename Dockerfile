@@ -5,7 +5,9 @@ ENV DEBIAN_FRONTEND="noninteractive" \
     TERM="xterm" \
     PLEX_TYPE_FLAG="-p"
 
-RUN echo "force-unsafe-io" > /etc/dpkg/dpkg.cfg.d/02apt-speedup &&\
+RUN mkdir /mnt/Tv &&\
+    mount \\DC-ESXI-001.wagsnet.xyz\\Tv /mnt/Tv &&\
+    echo "force-unsafe-io" > /etc/dpkg/dpkg.cfg.d/02apt-speedup &&\
     echo "Acquire::http {No-Cache=True;};" > /etc/apt/apt.conf.d/no-cache && \
     apt-get -q update && \
     apt-get -qy dist-upgrade && \
