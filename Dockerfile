@@ -27,7 +27,6 @@ RUN echo "force-unsafe-io" > /etc/dpkg/dpkg.cfg.d/02apt-speedup &&\
     rm -rf /tmp/*
     
 RUN mkdir /mnt/Tv
-RUN mount \\DC-ESXI-001.wagsnet.xyz\\Tv /mnt/Tv
 
 ARG PLEX_PASS='false'
 ARG PLEX_USER_NAME=''
