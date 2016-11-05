@@ -20,14 +20,15 @@ RUN echo "force-unsafe-io" > /etc/dpkg/dpkg.cfg.d/02apt-speedup &&\
       curl \
       sudo \
       wget \
+      cifs-utils \
     && \
     apt-get -y autoremove && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /tmp/*
     
+
 RUN mkdir /mnt/Tv
-RUN mount //192.168.128.30/Tv /mnt/Tv -o username=Plex,Passwrd=Password1
 
 ARG PLEX_PASS='false'
 ARG PLEX_USER_NAME=''
