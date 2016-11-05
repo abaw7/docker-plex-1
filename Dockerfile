@@ -27,7 +27,7 @@ RUN echo "force-unsafe-io" > /etc/dpkg/dpkg.cfg.d/02apt-speedup &&\
     rm -rf /tmp/*
     
 RUN mkdir /mnt/Tv
-RUN mkdir mount //192.168.128.30/Tv /mnt/Tv -o username=Plex,Passwrd=Password1
+RUN mount //192.168.128.30/Tv /mnt/Tv -o username=Plex,Passwrd=Password1
 
 ARG PLEX_PASS='false'
 ARG PLEX_USER_NAME=''
